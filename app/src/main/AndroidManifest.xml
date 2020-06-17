@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.huawei.mlkit.example">
+
+    <meta-data
+        android:name="com.huawei.hms.ml.DEPENDENCY"
+        android:value= "object,ocr,face,label,icr,bcr,imgseg"/>
+
+    <!-- add authorization of camera -->
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat"
+        tools:replace="android:allowBackup">
+
+        <activity android:name=".document.ImageDocumentAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".object.LiveObjectAnalyseActivity"></activity>
+        <activity android:name=".landmark.ImageLandmarkAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".face.StillFaceAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".classification.ImageClassificationAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".text.ImageTextAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+		<activity android:name=".face.LiveFaceAnalyseActivity"></activity>
+        <activity android:name=".translate.TranslatorActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".imgseg.ImageSegmentationLiveAnalyseActivity"></activity>
+        <activity android:name=".imgseg.ImageSegmentationStillAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".productvisionsearch.ProductVisionSearchAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".tts.TtsAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".asr.AsrAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".IDCard.IcrAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".bankCard.BcrAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".generalCard.GcrAnalyseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
