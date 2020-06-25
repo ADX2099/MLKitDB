@@ -22,7 +22,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="@string/save_btn"/>
+        android:text="@string/save_btn"
+        android:textColor="@color/color_fondo"
+        android:backgroundTint="@color/color_primary"/>
 
     <ToggleButton
         android:id="@+id/facingSwitch"

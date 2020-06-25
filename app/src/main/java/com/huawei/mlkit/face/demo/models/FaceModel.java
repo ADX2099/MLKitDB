@@ -1,11 +1,7 @@
-package com.huawei.mlkit.face.demo;
+package com.huawei.mlkit.face.demo.models;
 
-import android.graphics.Rect;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import com.huawei.hms.mlsdk.common.MLPosition;
-import com.huawei.hms.mlsdk.face.MLFaceShape;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,7 +20,7 @@ public class FaceModel implements  Serializable, Parcelable {
     public float mustache ;
     public float sex ;
     public float borderTop;
-    //public List<PositionObj> mlPositions;
+   // public List<PositionObj> mlPositions;
 
     public FaceModel(){
 
@@ -43,7 +39,7 @@ public class FaceModel implements  Serializable, Parcelable {
         age = in.readInt();
         mustache = in.readFloat();
         sex = in.readFloat();
-       // mlPositions = in.readArrayList(PositionObj.class.getClassLoader());
+      // mlPositions = in.readArrayList(PositionObj.class.getClassLoader());
 
     }
 
@@ -78,7 +74,7 @@ public class FaceModel implements  Serializable, Parcelable {
         dest.writeInt(age);
         dest.writeFloat(mustache);
         dest.writeFloat(sex);
-        //mlPositions = new ArrayList<PositionObj>();
+       // mlPositions = new ArrayList<PositionObj>();
 
     }
 }

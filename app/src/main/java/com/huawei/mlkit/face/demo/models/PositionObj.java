@@ -1,4 +1,4 @@
-package com.huawei.mlkit.face.demo;
+package com.huawei.mlkit.face.demo.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -6,9 +6,9 @@ import android.os.Parcelable;
 import java.io.Serializable;
 
 public class PositionObj implements Serializable, Parcelable {
-    float x;
-    float y;
-    float z;
+    public float x;
+    public float y;
+    public float z;
 
     public PositionObj(){
 

@@ -1,16 +1,10 @@
-package com.huawei.mlkit.face.demo;
+package com.huawei.mlkit.face.demo.db;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.media.FaceDetector;
-import android.util.Log;
 
-import androidx.annotation.Nullable;
-
-import java.util.ArrayList;
+import com.huawei.mlkit.face.demo.utils.FaceConstants;
 
 public class DBHelper extends SQLiteOpenHelper {
     private Context ctx;
@@ -31,6 +25,15 @@ public class DBHelper extends SQLiteOpenHelper {
             FaceReaderContract.FaceEntry.mustache + " REAL, " +
             FaceReaderContract.FaceEntry.sex + " REAL, " +
             FaceReaderContract.FaceEntry.border_top + " REAL)";
+    final String createUser = "CREATE TABLE " + FaceReaderContract.UserEntry.TABLE_NAME +
+            " (" + FaceReaderContract.UserEntry._ID +" INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            FaceReaderContract.UserEntry.userName + " TEXT," +
+            FaceReaderContract.UserEntry.userAge + " INTEGER," +
+            FaceReaderContract.UserEntry.userFaceHeight + " REAL, " +
+            FaceReaderContract.UserEntry.userFaceWidth + " REAL, " +
+            FaceReaderContract.UserEntry.userMustache + " REAL, " +
+            FaceReaderContract.UserEntry.userSex + " REAL)";
+    String query = create + createUser;
 
 
     public DBHelper(Context context) {
@@ -41,7 +44,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL(create);
+        db.execSQL(query);
 
     }
 
@@ -54,8 +57,5 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onUpgrade(db, oldVersion, newVersion);
     }
-
-
-
 
 }

@@ -1,30 +1,16 @@
 package com.huawei.mlkit.face.demo;
-/*
- * Copyright 2020. Huawei Technologies Co., Ltd. All rights reserved.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
-import android.graphics.Rect;
-import android.util.Log;
+
 import android.util.SparseArray;
 
 import com.huawei.hms.mlsdk.common.MLAnalyzer;
 import com.huawei.hms.mlsdk.common.MLPosition;
 import com.huawei.hms.mlsdk.face.MLFace;
-import com.huawei.hms.mlsdk.face.MLFaceShape;
 import com.huawei.mlkit.face.demo.camera.GraphicOverlay;
+import com.huawei.mlkit.face.demo.models.FaceModel;
+import com.huawei.mlkit.face.demo.models.PositionObj;
 import com.huawei.mlkit.face.demo.ui.MLFaceGraphic;
+import com.huawei.mlkit.face.demo.utils.FaceConstants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +36,7 @@ public class FaceAnalyzerTransactor implements MLAnalyzer.MLTransactor<MLFace> {
         if(type.equals(FaceConstants.SAVE)){
             for (int i = 0; i < faceSparseArray.size(); i++) {
                 FaceModel faceModel = new FaceModel();
-                List<MLPosition> mlPositions =  faceSparseArray.get(i).getAllPoints();
+                /*List<MLPosition> mlPositions =  faceSparseArray.get(i).getAllPoints();
                 List<PositionObj> posListStore = new ArrayList<>();
                 for (MLPosition position:mlPositions) {
 
@@ -58,7 +44,7 @@ public class FaceAnalyzerTransactor implements MLAnalyzer.MLTransactor<MLFace> {
                     positionObj.x = position.getX();
                     positionObj.y = position.getY();
                     posListStore.add(positionObj);
-                }
+                }*/
                 float borderBottom = faceSparseArray.get(i).getBorder().bottom;
                 float borderTop = faceSparseArray.get(i).getBorder().top;
                 float borderLeft = faceSparseArray.get(i).getBorder().left;
@@ -84,7 +70,6 @@ public class FaceAnalyzerTransactor implements MLAnalyzer.MLTransactor<MLFace> {
 
                 assignationResponse.successAssignation(faceModel);
 
-                //MLFaceGraphic graphic = new MLFaceGraphic(mGraphicOverlay, faceSparseArray.valueAt(i));
 
             }
         }else {

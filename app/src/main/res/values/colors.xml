@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+
+    <color name="color_primary">#E83F3F</color>
+<color name="color_fondo">#f9f9f9</color>
+<color name="color_secondary">#868686</color>
+<color name="color_text_gray">#9b9b9b</color>
+<color name="color_ui_100">#FFFFFF</color>
+<color name="color_ui_200">#FAFAFA</color>
+<color name="color_ui_300">#F5F5F5</color>
+<color name="color_ui_400">#F0F0F0</color>
+<color name="color_ui_500">#C2C2C2</color>
+<color name="color_ui_600">#868686</color>
+<color name="color_ui_700">#1F1F1F</color>
+<color name="primary_400">#F95F5F</color>
+<color name="primary_500">#E83F3F</color>
+<color name="primary_600">#C50909</color>
+<color name="primary_700">#990000</color>
+<color name="state_blue">#336CE2</color>
+<color name="state_green">#20BA24</color>
+<color name="state_green_2">#1DAC20</color>
+<color name="state_yellow">#FFC300</color>
+<color name="state_orange">#FF5734</color>
+
+<color name="colorPrimary">#E83F3F</color>
+<color name="colorPrimaryDark">#868686</color>
+<color name="colorAccent">#E43136</color>
+<color name="colorBlack">#000000</color>
 </resources>

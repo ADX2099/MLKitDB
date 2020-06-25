@@ -32,15 +32,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import com.huawei.hmf.tasks.Task;
 import com.huawei.hms.mlsdk.MLAnalyzerFactory;
 import com.huawei.hms.mlsdk.common.LensEngine;
 import com.huawei.hms.mlsdk.common.MLFrame;
-import com.huawei.hms.mlsdk.face.MLFace;
 import com.huawei.hms.mlsdk.face.MLFaceAnalyzer;
 import com.huawei.hms.mlsdk.face.MLFaceAnalyzerSetting;
 import com.huawei.mlkit.face.demo.camera.CameraSourcePreview;
 import com.huawei.mlkit.face.demo.camera.GraphicOverlay;
+import com.huawei.mlkit.face.demo.models.FaceModel;
+import com.huawei.mlkit.face.demo.utils.FaceConstants;
 
 import java.io.IOException;
 
@@ -59,7 +59,7 @@ public class LiveImageDetectionActivity extends AppCompatActivity implements Com
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Toast.makeText(this, getResources().getString(R.string.advice), Toast.LENGTH_LONG).show();
 
         this.setContentView(R.layout.activity_live_image_detection);
         this.saveBtn = this.findViewById(R.id.saveBtn);
@@ -85,7 +85,7 @@ public class LiveImageDetectionActivity extends AppCompatActivity implements Com
 
     private void saveDataInPrefs() {
 
-       analyzer.setTransactor(new FaceAnalyzerTransactor(this.mOverlay,FaceConstants.SAVE,this));
+       analyzer.setTransactor(new FaceAnalyzerTransactor(this.mOverlay, FaceConstants.SAVE,this));
     }
 
     private void requestCameraPermission() {

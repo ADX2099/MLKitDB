@@ -3,10 +3,10 @@ package com.huawei.mlkit.face.demo;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.huawei.mlkit.face.demo.utils.FaceConstants;
 
 public class Singleton extends Application {
 
@@ -14,8 +14,6 @@ public class Singleton extends Application {
     private static AppCompatActivity currentActivity;
     private static SharedPreferences settings;
     private static SharedPreferences.Editor editor;
-    private static SQLiteDatabase db;
-    private static DBHelper dbh;
     private Context context;
 
 
@@ -39,23 +37,7 @@ public class Singleton extends Application {
         super.onCreate();
         context = this;
         initPreferences();
-        initBD();
-    }
 
-    private void initBD(){
-        /*
-        if(dbh == null)
-            dbh = new DBHelper(this, FaceConstants.DBNAME, null, 11);
-        if(db == null)
-            db = dbh.getWritableDatabase();*/
-    }
-
-    public static SQLiteDatabase getDb(){
-        return db;
-    }
-
-    public static DBHelper getBdh(){
-        return dbh;
     }
 
     public static void setCurrentActivity(AppCompatActivity arg) {
@@ -101,8 +83,6 @@ public class Singleton extends Application {
         editor.putLong(tag, arg);
         editor.apply();
     }
-
-
 
 }
 

@@ -1,4 +1,4 @@
-package com.huawei.mlkit.face.demo;
+package com.huawei.mlkit.face.demo.utils;
 
 public class FaceConstants {
 
@@ -7,5 +7,6 @@ public class FaceConstants {
     public static final String DBNAME = "face_db.db";
     public static final String FACES = "Faces";
     public static final String FACE = "face_model";
+    public static final String USER_SESSION = "user_session";
 
 }

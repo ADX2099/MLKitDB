@@ -3,7 +3,6 @@ package com.huawei.mlkit.face.demo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -12,14 +11,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.huawei.mlkit.face.demo.db.DBHelper;
+import com.huawei.mlkit.face.demo.db.FaceReaderContract;
+import com.huawei.mlkit.face.demo.models.FaceModel;
+import com.huawei.mlkit.face.demo.utils.FaceConstants;
+
 import java.util.ArrayList;
 
 public class SavingActivity extends AppCompatActivity {
     FaceModel faceModel;
-
     Button buttonInfo;
     ArrayList<FaceModel> arrayList;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +34,7 @@ public class SavingActivity extends AppCompatActivity {
             saveIntoDB(faceModel);
 
         }
-
         initViews();
-        // Log.d("TAG1","age: " + getFaces().get(0).age + " sex " + getFaces().get(0).sex + " mustache " + getFaces().get(0).mustache );
     }
 
     private void initViews() {
@@ -43,9 +43,8 @@ public class SavingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrayList = getFaces();
-                Log.d("TAG1", "El largo " + arrayList.size());
                 for (FaceModel face:arrayList) {
-                    Log.d("TAG1", "AGE " + face.age + " " + "BORDER BOT " + face.borderBottom );
+
                 }
             }
         });
@@ -67,7 +66,6 @@ public class SavingActivity extends AppCompatActivity {
         values.put(FaceReaderContract.FaceEntry.sex, faceModel.sex);
         values.put(FaceReaderContract.FaceEntry.border_top, faceModel.borderTop);
         long newRowId = db.insert(FaceConstants.FACES, null, values);
-        Log.d("TAG1", "insert " + newRowId);
 
 
     }
@@ -118,5 +116,4 @@ public class SavingActivity extends AppCompatActivity {
         cursor.close();
         return array;
     }
-
 }
