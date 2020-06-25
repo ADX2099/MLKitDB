@@ -1,4 +1,4 @@
-git package com.huawei.mlkit.face.demo;
+package com.huawei.mlkit.face.demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
