@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FaceDemo</string>
+    <string name="save_btn">Save</string>
+    <string name="get_Info">Get Info</string>
+</resources>
