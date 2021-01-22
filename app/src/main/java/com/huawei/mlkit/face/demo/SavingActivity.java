@@ -3,8 +3,10 @@ package com.huawei.mlkit.face.demo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.util.Log;
@@ -34,7 +36,23 @@ public class SavingActivity extends AppCompatActivity {
             saveIntoDB(faceModel);
 
         }
-        initViews();
+
+        Intent theIntent = new Intent(Intent.ACTION_VIEW);
+        //Define tu protocolo
+        theIntent.setData(Uri.parse("pushscheme://com.huawei.codelabpush/deeplink?"));
+        //Agrega los parametros a tu intent
+        theIntent.putExtra("nombre","Soro");
+        theIntent.putExtra("edad","27");
+        theIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        String intentUri = theIntent.toUri(Intent.URI_INTENT_SCHEME);
+
+        Intent gotIntent = getIntent();
+        if(null != gotIntent){
+            //Obtenemos la informacion del intent
+            String nombre = gotIntent.getData().getQueryParameter("nombre");
+            int edad = Integer.parseInt(gotIntent.getData().getQueryParameter("edad"));
+        }
+
     }
 
     private void initViews() {
@@ -116,4 +134,6 @@ public class SavingActivity extends AppCompatActivity {
         cursor.close();
         return array;
     }
+
+
 }

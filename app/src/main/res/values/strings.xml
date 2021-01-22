@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">FaceDemo</string>
     <string name="save_btn">Save</string>
     <string name="get_Info">Get Info</string>
@@ -8,4 +9,5 @@
     <string name="advice">Turn the camera so MLKit can recognize your face. After recognition press the Save Button</string>
     <string name="correct_save">User Saved Correctly</string>
     <string name="gotoLogin">Go to Login </string>
+
 </resources>

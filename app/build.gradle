@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 
+
 android {
     compileSdkVersion 29
     buildToolsVersion "28.0.3"
@@ -24,23 +25,63 @@ android {
         useNewCruncher false
     }
 
+
     repositories {
         flatDir {
             dirs 'libs'
         }
-    }
-}
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.aar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    // Face detection SDK.
-    implementation 'com.huawei.hms:ml-computer-vision-face:1.0.4.300'
-    // Face detection model.
-    implementation 'com.huawei.hms:ml-computer-vision-face-emotion-model:1.0.4.300'
-    implementation 'com.huawei.hms:ml-computer-vision-face-feature-model:1.0.4.300'
-    implementation 'com.huawei.hms:ml-computer-vision-face-shape-point-model:1.0.4.300'
+        lintOptions {
+            checkReleaseBuilds false
+            abortOnError false
+        }
+        compileOptions {
+            sourceCompatibility 1.8
+            targetCompatibility 1.8
+
+        }
+    }
+
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.aar'])
+        implementation 'androidx.appcompat:appcompat:1.1.0'
+
+
+        // Text recognition SDK.
+        implementation 'com.huawei.hms:ml-computer-vision-ocr:1.0.4.300'
+        // Text recognition model.
+        implementation 'com.huawei.hms:ml-computer-vision-ocr-cn-model:1.0.4.300'
+        implementation 'com.huawei.hms:ml-computer-vision-ocr-jk-model:1.0.4.300'
+        implementation 'com.huawei.hms:ml-computer-vision-ocr-latin-model:1.0.4.300'
+
+        // General card recognition plugin.
+        implementation 'com.huawei.hms:ml-computer-card-gcr-plugin:1.0.4.300'
+
+        // Image segmentation SDK.
+        implementation 'com.huawei.hms:ml-computer-vision-segmentation:1.0.4.301'
+        // Image segmentation model.
+        implementation 'com.huawei.hms:ml-computer-vision-image-segmentation-body-model:1.0.4.301'
+        implementation 'com.huawei.hms:ml-computer-vision-image-segmentation-multiclass-model:1.0.4.301'
+
+        // Image classification SDK.
+        implementation 'com.huawei.hms:ml-computer-vision-classification:1.0.4.300'
+        // Image classification model.
+        implementation 'com.huawei.hms:ml-computer-vision-image-classification-model:1.0.4.300'
+
+        // Object detection and tracking SDK.
+        implementation 'com.huawei.hms:ml-computer-vision-object:1.0.4.300'
+        // Object detection and tracking model.
+        implementation 'com.huawei.hms:ml-computer-vision-object-detection-model:1.0.4.300'
+
+
+        // Face detection SDK.
+        implementation 'com.huawei.hms:ml-computer-vision-face:1.0.4.300'
+        // Face detection model.
+        implementation 'com.huawei.hms:ml-computer-vision-face-emotion-model:1.0.4.300'
+        implementation 'com.huawei.hms:ml-computer-vision-face-feature-model:1.0.4.300'
+        implementation 'com.huawei.hms:ml-computer-vision-face-shape-point-model:1.0.4.300'
+
+    }
 }
 
 apply plugin: 'com.huawei.agconnect'  // HUAWEI agconnect Gradle plugin

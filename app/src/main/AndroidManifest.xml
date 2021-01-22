@@ -25,9 +25,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SavingActivity" />
-        <activity android:name=".LiveImageDetectionActivity">
+        <activity android:name=".SavingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data
+                android:host="com.huawei.codelabpush"
+                android:path="/deeplink"
+                android:scheme="pushscheme" />
+            </intent-filter>
         </activity>
+        <activity android:name=".LiveImageDetectionActivity">
+            <intent-filter>
+                //Asigna el nombre del campo
+                <action android:name="com.huawei.codelabpush.intent.action.test" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
     </application>
+
 
 </manifest>
